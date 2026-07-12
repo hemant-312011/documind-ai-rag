@@ -85,7 +85,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="mailto:your-email@example.com"
+              href="mailto:hemant.rao.dev@gmail.com"
               aria-label="Send email"
               className="flex size-10 items-center justify-center rounded-xl border border-indigo-100 bg-white text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-300 hover:text-indigo-600 dark:border-white/10 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-indigo-400/40 dark:hover:text-indigo-300"
             >

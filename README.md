@@ -1,75 +1,98 @@
-# React + TypeScript + Vite
+# DocuMind AI RAG
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DocuMind is a full-stack Retrieval-Augmented Generation application that allows users to upload PDF documents and ask natural-language questions about their content.
 
-Currently, two official plugins are available:
+The application retrieves relevant document sections, sends the retrieved context to an AI model, and returns grounded answers with file-name and page-level source citations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Project Preview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+DocuMind provides a clean and responsive interface for:
 
-## Expanding the ESLint configuration
+- Uploading multiple PDF documents
+- Managing the document knowledge base
+- Creating vector embeddings
+- Performing semantic document retrieval
+- Asking questions about uploaded documents
+- Generating grounded AI answers
+- Displaying document and page citations
+- Switching between light and dark themes
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Multi-PDF upload support
+- Drag-and-drop PDF upload
+- Document library management
+- Delete individual documents
+- Clear all uploaded documents
+- PDF text extraction
+- Recursive text chunking
+- Local embeddings using Ollama
+- In-memory vector storage
+- Semantic similarity search
+- Retrieval-Augmented Generation
+- Groq-powered AI responses
+- Page-level source citations
+- Hallucination-control prompt
+- Automatic index rebuilding
+- Responsive user interface
+- Light and dark mode
+- Copy AI responses
+- Error and loading states
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
-```
+## Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Frontend
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Lucide React
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Backend
 
-```
+- Node.js
+- Express.js
+- Multer
+- CORS
+- Dotenv
+
+### AI and RAG
+
+- LangChain.js
+- Groq
+- Ollama
+- `nomic-embed-text`
+- MemoryVectorStore
+- PDFLoader
+- RecursiveCharacterTextSplitter
+
+---
+
+## How It Works
+
+```text
+PDF Upload
+    ↓
+PDF Text Extraction
+    ↓
+Document Chunking
+    ↓
+Ollama Embeddings
+    ↓
+Memory Vector Store
+    ↓
+Semantic Retriever
+    ↓
+Relevant Document Context
+    ↓
+Groq Large Language Model
+    ↓
+Grounded Answer with Citations
