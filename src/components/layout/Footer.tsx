@@ -96,10 +96,7 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-indigo-100 pt-6 text-sm text-slate-500 dark:border-white/10 dark:text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-        <p>
-          © {currentYear} DocuMind RAG. Built for learning and portfolio
-          demonstration.
-        </p>
+        <p>© {currentYear} DocuMind AI RAG • Designed & Developed by Hemant Rao</p>
 
         <p>React · TypeScript · Tailwind CSS · LangChain.js</p>
       </div>
